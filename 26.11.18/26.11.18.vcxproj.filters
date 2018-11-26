@@ -24,12 +24,42 @@
     <ClCompile Include="Date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Appliances.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OfficeSupplies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingMaterials.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Warehouse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WarehouseConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Date.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Appliances.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OfficeSupplies.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingMaterials.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Warehouse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WarehouseConsole.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
