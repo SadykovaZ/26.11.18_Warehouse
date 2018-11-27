@@ -2,11 +2,11 @@
 #include"Product.h"
 class Appliances:public Product
 {
-	string name;
+	string purpose;
 public:
-	Appliances(int price, string color, int eDay, int eMonth, int eYear, string name);
-	void setName(string name);
-	string getName() const { return name; }
+	Appliances(int price, string color, string name, int eDay, int eMonth, int eYear, string purpose);
+	void setPurpose(string purpose);
+	string getPurpose() const { return purpose; }
 
 	void info() const override;
 	

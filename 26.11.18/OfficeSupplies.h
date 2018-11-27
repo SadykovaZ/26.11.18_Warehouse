@@ -2,11 +2,11 @@
 #include"Product.h"
 class OfficeSupplies:public Product
 {
-	string name;
+	int count;
 public:
-	OfficeSupplies(int price, string color, int eDay, int eMonth, int eYear, string name);
-	void setName(string name);
-	string getName() const { return name; }
+	OfficeSupplies(int price, string color, string name, int eDay, int eMonth, int eYear, int count);
+	void setCount(int count);
+	int getCount() const { return count; }
 
 	void info() const override;
 

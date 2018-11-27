@@ -2,11 +2,11 @@
 #include"Product.h"
 class BuildingMaterials :public Product
 {
-	string name;
+	string type;
 public:
-	BuildingMaterials(int price, string color, int eDay, int eMonth, int eYear, string name);
-	void setName(string name);
-	string getName() const { return name; }
+	BuildingMaterials(int price, string color, string name, int eDay, int eMonth, int eYear, string type);
+	void setType(string type);
+	string getType() const { return type; }
 
 	void info() const override;
 };

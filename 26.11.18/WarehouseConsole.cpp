@@ -2,7 +2,7 @@
 WarehouseConsole::WarehouseConsole()
 	:wareH("")
 {
-	startMenu();
+	//startMenu();
 }
 
 void WarehouseConsole::start()
@@ -84,16 +84,20 @@ void WarehouseConsole::addProductMenu()
 		return;
 	int price;
 	string color;
+	string name;
 	int day;
 	int month;
 	int year;
 	
-	string name;
+	string purpose;
+	string type;
 	system("cls");
 	cout << "Set product price\n";
 	cin >> price;
 	cout << "Set product color\n";
 	cin >> color;
+	cout << "Set product name\n";
+	cin >> name;
 	cout << "Set product expiration day\n";
 	cin >> day;
 	cout << "Set product expiration month\n";
@@ -105,19 +109,20 @@ void WarehouseConsole::addProductMenu()
 	{
 	case 1:
 		
-		cout << "Name of house appliance: \n";
-		cin >> name;
-		prod = new Appliances(price,color,day,month,year,name);
+		cout << "Purpose of house appliance: \n";
+		cin >> purpose;
+		prod = new Appliances(price,color, name, day,month,year,purpose);
 		break;
 	case 2:
-		cout << "Name of office supply: \n";
-		cin >> name;
-		prod = new OfficeSupplies(price, color, day, month, year, name);
+		int count;
+		cout << "Count of office supply: \n";
+		cin >> count;
+		prod = new OfficeSupplies(price, color, name, day, month, year, count);
 		break;
 	case 3:
-		cout << "Name of building material: \n";
-		cin >> name;
-		prod = new BuildingMaterials(price, color, day, month, year, name);
+		cout << "Type of building material: \n";
+		cin >> type;
+		prod = new BuildingMaterials(price, color,name, day, month, year, type);
 		break;	
 	}
 	system("cls");

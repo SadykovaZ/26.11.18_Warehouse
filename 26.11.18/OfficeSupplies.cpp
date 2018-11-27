@@ -1,16 +1,16 @@
 #include "OfficeSupplies.h"
 
-OfficeSupplies::OfficeSupplies(int price, string color, int eDay, int eMonth, int eYear, string name)
-	:Product(price, color, eDay, eMonth, eYear)
+OfficeSupplies::OfficeSupplies(int price, string color, string name, int eDay, int eMonth, int eYear, int count)
+	:Product(price, color, name, eDay, eMonth, eYear)
 {
-	this->name = name;
+	this->count = count;
 }
-void OfficeSupplies::setName(string name)
+void OfficeSupplies::setCount(int count)
 {
-	this->name = name;
+	this->count = count;
 }
 void OfficeSupplies::info() const
 {
 	Product::info();
-	cout << "Name of office supply: " << name << endl;
+	cout << "Count of office supply: " << count << endl;
 }

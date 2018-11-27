@@ -1,15 +1,15 @@
 #include "Appliances.h"
-Appliances::Appliances(int price, string color, int eDay, int eMonth, int eYear, string name)
-	:Product(price, color, eDay, eMonth, eYear)
+Appliances::Appliances(int price, string color, string name, int eDay, int eMonth, int eYear, string purpose)
+	:Product(price, color, name, eDay, eMonth, eYear)
 {
-	this->name = name;
+	this->purpose = purpose;
 }
-void Appliances::setName(string name)
+void Appliances::setPurpose(string purpose)
 {
-	this->name = name;
+	this->purpose = purpose;
 }
 void Appliances::info() const
 {
 	Product::info();
-	cout << "Name of appliance: " << name << endl;
+	cout << "Purpose of appliance: " << purpose << endl;
 }

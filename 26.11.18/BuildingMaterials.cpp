@@ -1,19 +1,19 @@
 #include "BuildingMaterials.h"
 
 
-BuildingMaterials::BuildingMaterials(int price, string color, int eDay, int eMonth, int eYear, string name)
-	:Product(price, color, eDay, eMonth, eYear)
+BuildingMaterials::BuildingMaterials(int price, string color, string name, int eDay, int eMonth, int eYear, string type)
+	:Product(price, color, name, eDay, eMonth, eYear)
 {
-	this->name = name;
+	this->type = type;
 }
 
-void BuildingMaterials::setName(string name)
+void BuildingMaterials::setType(string type)
 {
-	this->name = name;
+	this->type = type;
 }
 
 void BuildingMaterials::info() const
 {
 	Product::info();
-	cout << "Name of office supply: " << name << endl;
+	cout << "Type of office supply: " << type << endl;
 }
