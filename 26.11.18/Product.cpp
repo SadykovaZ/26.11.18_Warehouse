@@ -1,16 +1,16 @@
 #include "Product.h"
 
-Product::Product(int price, string color, string name, int eDay, int eMonth, int eYear)
-	:date_(eDay,eMonth,eYear)
-{
-	date_ d;
+int Product::prodCode = 0;
+Product::Product(string name, int price, string color, date_ expDate)
+	
+{	
+	this->id = ++prodCode;	
+	this->name = name;
 	this->price = price;
 	this->color = color;
-	this->name = name;
-	date_::setDay(eDay);
-	date_::setMonth(eMonth);
-	date_::setYear(eYear);
+	this->expDate = expDate;
 }
+Product::Product(){ this->id = ++prodCode; }
 void Product::setPrice(int price)
 {
 	this->price = price;
@@ -23,14 +23,54 @@ void Product::setName(string name)
 {
 	this->name = name;
 }
+
+void Product::setExpDate(date_ expDate)
+{
+	
+	this->expDate = expDate;
+}
 void Product::info() const
 {
+	cout << "ID: " << id << endl;
+	cout << "Name: " << name<< endl;
 	cout << "Price: " << price << endl;
 	cout << "Color: " << color << endl;
-	cout << "Name: " << name<< endl;
-	cout << "Expiration date: ";
-	date_::print();
-	cout << endl;
-	cout << "Current date: " << date_::getCurrentDay() << "." << date_::getCurrentMonth() << "." << date_::getCurrentYear() << endl;
+	cout << "Expiration date: " << expDate << endl;	
+}
+bool Product::expiredDate() const
+{
+	
+	if (daysToDateFromCurrDate(this->expDate) < 0) 
+	{		
+		return true;
+	}
+	return false;
+}
+
+string Product::getStringFileInfo() const
+{
+	char d = ';';
+	string res = typeid(*this).name();
+	res = res.substr(6) + d;
+	res += getName() += d;
+	res += to_string(getPrice()) += d;
+	res += getColor() += d;
+	res += to_string(getExpDate()) += d;
+
+	return res;
+}
+
+void Product::readStringInfo(string & str)
+{
+	string info[4];
+	for (size_t i = 0; i < 4; i++)
+	{
+		info[i] = str.substr(0, str.find(';'));
+		str = str.substr(str.find(';') + 1);
+	}
+	this->setName(info[0]);
+	this->setPrice(stoi(info[1]));
+	this->setColor(info[2]);
+	this->setExpDate(stoi(info[3]));
 }
 

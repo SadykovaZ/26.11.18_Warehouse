@@ -4,11 +4,14 @@ class OfficeSupplies:public Product
 {
 	int count;
 public:
-	OfficeSupplies(int price, string color, string name, int eDay, int eMonth, int eYear, int count);
+	OfficeSupplies(string name, int price, string color, date_ expDate, int count);
+	OfficeSupplies() = default;
 	void setCount(int count);
 	int getCount() const { return count; }
 
 	void info() const override;
-
+	bool criticalDaysToExpiration()const override;
+	string getStringFileInfo()const override;
+	void readStringInfo(string &res)override;
 };
 

@@ -1,0 +1,8 @@
+;7
+Appliances;Table;1000;brown;27;t;
+OfficeSupplies;Pen;100;black;20;48;
+BuildingMaterials;Deck;900;grey;30;d;
+Appliances;Chair;800;k;25;t;
+OfficeSupplies;po;25;ol;11;54;
+Appliances;ff;22;dd;30;ff;
+OfficeSupplies;hh;25;hh;20;25;

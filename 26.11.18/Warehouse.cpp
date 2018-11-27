@@ -15,39 +15,56 @@ void Warehouse::addProduct(Product * product)
 }
 void Warehouse::delProduct(Product * product)
 {
+	bool flag = false;
 	for (size_t i = 0; i < products.size(); i++)
 	{
 		if (products[i].get() == product) {
+			flag = true;
 			products.erase(begin(products) + i);
-			return;
 		}
 	}
+	if (flag == false)
+		cout << "not avaliable\n";
 }
 void Warehouse::getInfo() const
 {
 	for (size_t i = 0; i < products.size(); i++)
 	{
 		products[i]->info();
+		
 	}
 }
 
-void Warehouse::productCriticExpDate()
+void Warehouse::productCriticExpDate() const
 {
 	for (size_t i = 0; i < products.size(); i++)
 	{
-		if ((products[i]->getCurrentDay()- (products[i]->getDay())) < 7)
+		if (products[i]->criticalDaysToExpiration())
 		{
 			products[i]->info();
+			
 		}
 	}
 }
-void Warehouse::overdueProduct() 
+void Warehouse::overdueProduct() const
 {
 	for (size_t i = 0; i < products.size(); i++)
 	{
-		if ((products[i]->getDay() < products[i]->getCurrentDay()) || (products[i]->getMonth() < products[i]->getCurrentMonth()) || (products[i]->getYear() < products[i]->getCurrentYear()))
+		if (products[i]->expiredDate()) 
 		{
-			products[i]->info();
+			products[i]->info();			
 		}
 	}
+}
+
+bool Warehouse::removeProductById(int id)
+{
+	for (size_t i = 0; i < products.size(); i++)
+	{
+		if (products[i]->getId() == id) {
+			products.erase(begin(products) + i);
+			return true;
+		}
+	}
+	return false;
 }
