@@ -1,7 +1,8 @@
-;6
-Appliances;Table;1000;Red;29;11;2018;sdfs;;;
-OfficeSupplies;Pen;300;Black;20;11;2018;54;
-Appliances;Pop;789;Led;30;11;2018;fdsgso;;;
-Appliances;Popi;895;Red;29;11;2018;Loli;;;
-Appliances;Hohi;789;Vivi;30;11;2018;Sosi;;
-BuildingMaterials;Gigi;1256;Ror;25;12;2018;rtr;
+;7
+Appliances;Table;1000;Red;29;11;2018;sdfs;
+OfficeSupplies;Pen;300;Black;20;11;2018;48;
+Appliances;Pop;789;Led;30;11;2018;fdsgso;
+Appliances;Popi;895;Red;29;11;2018;Loli;
+Appliances;Hohi;789;Vivi;30;11;2018;Sosi;
+BuildingMaterials;Gigi;1256;Ror;25;12;2018;r;
+Appliances;RRRR;789;EEE;30;11;2018;WWW
