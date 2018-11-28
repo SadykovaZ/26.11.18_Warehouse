@@ -11,7 +11,8 @@ void Appliances::setPurpose(string purpose)
 void Appliances::info() const
 {
 	Product::info();
-	cout << "Purpose of appliance: " << purpose << endl;
+	cout << "Purpose of appliance: " << getPurpose() << endl<<endl;
+	cout << "------------------------------\n";
 }
 
 bool Appliances::criticalDaysToExpiration() const
@@ -36,5 +37,7 @@ void Appliances::readStringInfo(string & res)
 {
 	Product::readStringInfo(res);
 	
-	purpose = res[res.size() - 2];
+	purpose = res;
 }
+
+

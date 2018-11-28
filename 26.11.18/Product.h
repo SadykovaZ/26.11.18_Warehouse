@@ -24,7 +24,12 @@ public:
 	string getName() const { return name; }
 
 	void setExpDate(date_ expDate);
+	void setExpDate2(int day, int month, int year);
+	int leftDays() const;
+
+	string getStrExpDate()const { return expDate.getStrInfo(); }
 	date_ getExpDate()const { return expDate; }
+
 
 	int getId()const { return id; }
 	string getProductType()const { return string(typeid(*this).name()).substr(6); }

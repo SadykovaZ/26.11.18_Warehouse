@@ -5,11 +5,13 @@
 //	month = 1;
 //	year = 1900;
 //}
-date_::date_(int day, int month , int year )
+date_::date_(int day, int month, int year)
 {
 	setDay(day);
 	setMonth(month);
 	setYear(year);
+
+	localtime_s(&now, &t);
 }
 void date_::setDay(int day)
 {
@@ -38,12 +40,37 @@ void date_::setDate(int day, int month, int year)
 	setMonth(month);
 	setYear(year);
 }
+int date_::getCurrentDay() const
+{
+	return now.tm_mday;
+	
+}
+int date_::getCurrentMonth() const
+{
+	return now.tm_mon + 1;
+}
+int date_::getCurrentYear() const
+{
+	return now.tm_year + 1900;
+}
 void date_::print() const
 {
 	if (day < 10)	cout << 0;
 	cout << day << ".";
 	if (month < 10)	cout << 0;
 	cout << month << "." << year;
+}
+
+string date_::getStrInfo() const
+{
+	string str;
+	str += to_string(getDay());
+	str += ";";
+	str += to_string(getMonth());
+	str += ";";
+	str += to_string(getYear());
+
+	return str;
 }
 
 date_::date_(const date_ & obj)
@@ -347,51 +374,39 @@ int daysBetweenDates(const date_ & a, const date_ & b)
 		counDays += 31 - a.getDay();
 	if (m == 4 || m == 6 || m == 9 || m == 11)
 		counDays += 30 - a.getDay();
-	if (m == 2) {
-		if (a.getYear() % 400 == 0 || (a.getYear() % 4 == 0 && a.getYear() % 100 != 0))
-			counDays += 29 - a.getDay();
-		else
-			counDays += 28 - a.getDay();
-	}
+	if (m == 2)
+		counDays += 28 - a.getDay();
 
-	if (x > y) {
+
+	if (x > y)
+	{
 		x = x - 1;
-		while (x != y) {
-			if (x % 400 == 0 || (x % 4 == 0 && x % 100 != 0))
-				counDays += 366;
-			else
-				counDays += 365;
+		while (x != y)
+		{
+			counDays += 365;
 			x--;
 		}
 
-			
 		n = n - 1;
-		while (n != 0) {
+		while (n != 0)
+		{
 			if (n == 1 || n == 3 || n == 5 || n == 7 || n == 8 || n == 10)
 				counDays += 31;
 			if (n == 4 || n == 6 || n == 9 || n == 11)
 				counDays += 30;
-			if (n == 2) {
-				if (b.getYear() % 400 == 0 || (b.getYear() % 4 == 0 && b.getYear() % 100 != 0))
-					counDays += 29;
-				else
-					counDays += 28;
-			}
+			if (n == 2)
+				counDays += 28;
 			n--;
 		}
-			
+
 		m = m + 1;
 		while (m < 13) {
 			if (m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
 				counDays += 31;
 			if (m == 4 || m == 6 || m == 9 || m == 11)
 				counDays += 30;
-			if (m == 2) {
-				if (a.getYear() % 400 == 0 || (a.getYear() % 4 == 0 && a.getYear() % 100 != 0))
-					counDays += 29;
-				else
-					counDays += 28;
-			}
+			if (m == 2)
+				counDays += 28;
 			m++;
 		}
 	}
@@ -403,12 +418,8 @@ int daysBetweenDates(const date_ & a, const date_ & b)
 					counDays += 31;
 				if (n == 4 || n == 6 || n == 9 || n == 11)
 					counDays += 30;
-				if (n == 2) {
-					if (x % 400 == 0 || (x % 4 == 0 && x % 100 != 0))
-						counDays += 29;
-					else
-						counDays += 28;
-				}
+				if (n == 2)
+					counDays += 28;
 				n--;
 			}
 		}

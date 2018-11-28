@@ -31,7 +31,7 @@ void Warehouse::getInfo() const
 	for (size_t i = 0; i < products.size(); i++)
 	{
 		products[i]->info();
-		
+
 	}
 }
 
@@ -39,10 +39,11 @@ void Warehouse::productCriticExpDate() const
 {
 	for (size_t i = 0; i < products.size(); i++)
 	{
-		if (products[i]->criticalDaysToExpiration())
+		if (products[i]->leftDays() <= 7 && products[i]->leftDays() > 0)
 		{
+
 			products[i]->info();
-			
+
 		}
 	}
 }
@@ -50,9 +51,9 @@ void Warehouse::overdueProduct() const
 {
 	for (size_t i = 0; i < products.size(); i++)
 	{
-		if (products[i]->expiredDate()) 
+		if (products[i]->leftDays() < 0)
 		{
-			products[i]->info();			
+			products[i]->info();
 		}
 	}
 }

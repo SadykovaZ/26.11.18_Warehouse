@@ -12,7 +12,8 @@ void OfficeSupplies::setCount(int count)
 void OfficeSupplies::info() const
 {
 	Product::info();
-	cout << "Count of office supply: " << count << endl;
+	cout << "Count of office supply: " << count << endl<<endl;
+	cout << "------------------------------\n";
 }
 
 bool OfficeSupplies::criticalDaysToExpiration() const

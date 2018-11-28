@@ -100,6 +100,7 @@ void WarehouseConsole::mainMenu()
 			break;
 		case 4:
 			wareH.productCriticExpDate();
+			
 			system("pause");
 			break;
 		case 5:

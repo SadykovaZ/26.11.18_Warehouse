@@ -14,5 +14,6 @@ public:
 	
 	string getStringFileInfo()const override;
 	void readStringInfo(string &res)override;
+	
 };
 

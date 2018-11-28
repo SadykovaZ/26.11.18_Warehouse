@@ -27,5 +27,7 @@ public:
 	}
 
 	int getCountOfProduct() const { return products.size(); }	
+
+
 };
 

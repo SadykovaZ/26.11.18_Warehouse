@@ -15,7 +15,8 @@ void BuildingMaterials::setType(string type)
 void BuildingMaterials::info() const
 {
 	Product::info();
-	cout << "Type of office supply: " << type << endl;
+	cout << "Type of office supply: " << type << endl<<endl;
+	cout << "------------------------------\n";
 }
 
 bool BuildingMaterials::criticalDaysToExpiration() const

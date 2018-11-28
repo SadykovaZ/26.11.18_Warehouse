@@ -3,6 +3,7 @@
 #include <ctime>
 #include <stdio.h>
 #include <conio.h>
+#include<string>
 using namespace std;
 class date_
 {
@@ -10,6 +11,9 @@ class date_
 	int month;
 	int year;
 	
+	time_t t = time(0);
+	struct tm now;
+
 public:
 	//date_();
 	date_(int day=1, int month=1, int year=1900 );
@@ -24,8 +28,13 @@ public:
 	int getMonth() const { return month; }
 	int getYear() const { return year; }
 
-	void print() const;
+	int getCurrentDay() const;
+	int getCurrentMonth() const;
+	int getCurrentYear() const;
+	 
 
+	void print() const;
+	string getStrInfo() const;
 	date_(const date_ &obj);
 
 	date_ &operator=(const date_&obj);
