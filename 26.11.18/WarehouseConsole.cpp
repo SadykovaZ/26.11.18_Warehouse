@@ -2,7 +2,7 @@
 WarehouseConsole::WarehouseConsole()
 	:wareH("")
 {
-	//startMenu();
+	startMenu();
 }
 
 void WarehouseConsole::start()
@@ -66,7 +66,15 @@ void WarehouseConsole::startMenu()
 	system("cls");
 	cout << "Welcome!";
 	Sleep(2000);
-	this->setWarhaouseNameMenu();	
+	system("cls");
+
+	cout << "Please wait.\nInformation is downloading from file.";
+	for (size_t i = 0; i < 5; i++)
+	{
+		cout << ".";
+		Sleep(1000);
+	}
+	//this->setWarhaouseNameMenu();	
 }
 
 void WarehouseConsole::mainMenu()
@@ -116,7 +124,7 @@ void WarehouseConsole::mainMenu()
 			break;
 		}
 	}
-	cout << "Thank you! Bye bye\n";
+	cout << "Thank you! Your information was saved to file!\nBye bye!\n";
 }
 
 void WarehouseConsole::addProductMenu()

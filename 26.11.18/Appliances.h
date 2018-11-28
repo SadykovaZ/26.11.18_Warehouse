@@ -10,7 +10,7 @@ public:
 	string getPurpose() const { return purpose; }
 
 	void info() const override;
-	bool criticalDaysToExpiration()const override;
+	
 	
 	string getStringFileInfo()const override;
 	void readStringInfo(string &res)override;

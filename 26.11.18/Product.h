@@ -36,8 +36,8 @@ public:
 
 
 	virtual void info() const;
-	virtual bool criticalDaysToExpiration()const = 0;
-	bool expiredDate()const;
+	
+	
 
 	virtual string getStringFileInfo()const;
 	virtual void readStringInfo(string &str);

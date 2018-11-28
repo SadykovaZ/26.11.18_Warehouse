@@ -1,5 +1,6 @@
 #pragma once
 #include"Product.h"
+#include <string>
 class OfficeSupplies:public Product
 {
 	int count;
@@ -10,7 +11,7 @@ public:
 	int getCount() const { return count; }
 
 	void info() const override;
-	bool criticalDaysToExpiration()const override;
+	
 	string getStringFileInfo()const override;
 	void readStringInfo(string &res)override;
 };

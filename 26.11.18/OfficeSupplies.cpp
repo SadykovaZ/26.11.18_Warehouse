@@ -16,15 +16,7 @@ void OfficeSupplies::info() const
 	cout << "------------------------------\n";
 }
 
-bool OfficeSupplies::criticalDaysToExpiration() const
-{
-	if (daysToDateFromCurrDate(this->getExpDate()) <= 10) 
-	{
-		
-		return true;
-	}
-	return false;
-}
+
 
 string OfficeSupplies::getStringFileInfo() const
 {
@@ -38,5 +30,5 @@ void OfficeSupplies::readStringInfo(string & res)
 {
 	Product::readStringInfo(res);
 
-	count = res[res.size() - 2];
+	count = stoi(res.substr(0, res.find(';')));
 }

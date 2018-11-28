@@ -15,7 +15,7 @@ class date_
 	struct tm now;
 
 public:
-	//date_();
+	
 	date_(int day=1, int month=1, int year=1900 );
 
 	void setDay(int day);
@@ -81,5 +81,3 @@ date_ operator*(const date_&d, int number);
 date_ operator/(const date_&d, const date_&d1);
 date_ operator/(const date_&d, int number);
 
-int daysBetweenDates(const date_&a, const date_&b);
-int daysToDateFromCurrDate(const date_&a);

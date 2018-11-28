@@ -1,8 +1,7 @@
-;7
-Appliances;Table;1000;Red;29;11;2018;sdfs;
-OfficeSupplies;Pen;300;Black;20;11;2018;48;
-Appliances;Pop;789;Led;30;11;2018;fdsgso;
-Appliances;Popi;895;Red;29;11;2018;Loli;
-Appliances;Hohi;789;Vivi;30;11;2018;Sosi;
-BuildingMaterials;Gigi;1256;Ror;25;12;2018;r;
-Appliances;RRRR;789;EEE;30;11;2018;WWW
+StoreHouse;6
+Appliances;Table;1000;Black;30;11;2018;Eat
+BuildingMaterials;Hammer;5000;Brown;12;12;2018;Build
+Appliances;Chair;6000;White;13;1;2019;Eat
+OfficeSupplies;Paper;1500;White;14;10;2020;20;
+OfficeSupplies;Pen;200;Red;20;11;2018;10;
+OfficeSupplies;File;900;Yellow;27;11;2018;68;

@@ -39,7 +39,6 @@ int Product::leftDays() const
 {
 	int lDays;
 	lDays = this->expDate.getDay() - this->expDate.getCurrentDay() + (this->expDate.getMonth() - this->expDate.getCurrentMonth()) * 30 + (this->expDate.getYear() - this->expDate.getCurrentYear()) * 12 * 30;
-	//cout << lDays;
 	return lDays;
 }
 void Product::info() const
@@ -50,15 +49,7 @@ void Product::info() const
 	cout << "Color: " << color << endl;
 	cout << "Expiration date: " << expDate;	
 }
-bool Product::expiredDate() const
-{
-	
-	if (daysToDateFromCurrDate(this->expDate) < 0) 
-	{		
-		return true;
-	}
-	return false;
-}
+
 
 string Product::getStringFileInfo() const
 {

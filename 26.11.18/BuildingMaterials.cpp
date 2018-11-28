@@ -19,21 +19,12 @@ void BuildingMaterials::info() const
 	cout << "------------------------------\n";
 }
 
-bool BuildingMaterials::criticalDaysToExpiration() const
-{
-	if (daysToDateFromCurrDate(this->getExpDate()) <= 30)
-	{
-		
-		return true;
-	}
-	return false;
-}
 
 string BuildingMaterials::getStringFileInfo() const
 {
 	string res = Product::getStringFileInfo();
 	res += type;
-	res += ';';
+	//res += ';';
 	return res;
 }
 
@@ -41,5 +32,5 @@ void BuildingMaterials::readStringInfo(string & res)
 {
 	Product::readStringInfo(res);
 
-	type = res[res.size() - 2];
+	type = res;
 }

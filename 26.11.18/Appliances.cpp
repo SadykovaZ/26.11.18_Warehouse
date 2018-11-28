@@ -14,22 +14,11 @@ void Appliances::info() const
 	cout << "Purpose of appliance: " << getPurpose() << endl<<endl;
 	cout << "------------------------------\n";
 }
-
-bool Appliances::criticalDaysToExpiration() const
-{
-	if (daysToDateFromCurrDate(this->getExpDate()) <= 7)
-	{
-		
-		return true;
-	}
-	return false;
-}
-
 string Appliances::getStringFileInfo() const
 {
 	string res = Product::getStringFileInfo();
-	res += purpose;
-	res += ';';
+	res += purpose ;
+	//res + ';';
 	return res;
 }
 
